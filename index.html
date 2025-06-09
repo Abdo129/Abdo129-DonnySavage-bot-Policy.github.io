@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const currentTheme = localStorage.getItem('theme') || 'light';
+            document.documentElement.setAttribute('data-theme', currentTheme);
+            
+            document.getElementById('theme-toggle').addEventListener('click', () => {
+                // FIX: Get current theme from HTML attribute instead of closure variable
+                const currentTheme = document.documentElement.getAttribute('data-theme');
+                const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+                document.documentElement.setAttribute('data-theme', newTheme);
+                localStorage.setItem('theme', newTheme);
+            });
+        });
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DonnySavage Bot Privacy Policy</title>
+    <style>
+        :root {
+            --primary: #5865F2;
+            --header-bg: #23272A;
+            --header-text: #FFFFFF;
+            --body-bg: #f9f9f9;
+            --text: #2c3e50;
+            --section-bg: #FFFFFF;
+            --footer-text: #7f8c8d;
+        }
+
+        [data-theme="dark"] {
+            --primary: #7983f5;
+            --header-bg: #1a1d21;
+            --header-text: #e3e5e8;
+            --body-bg: #121416;
+            --text: #e3e5e8;
+            --section-bg: #1e2124;
+            --footer-text: #a0a6ab;
+        }
+        body {
+            background-color: var(--body-bg);
+            color: var(--text);
+            font-family: 'Segoe UI', sans-serif;
+            line-height: 1.6;
+            /* REMOVED fixed color values */
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            /* REMOVED fixed background-color */
+        }
+        header {
+            background: var(--header-bg);
+            color: var(--header-text);
+            /* REMOVED redundant background/color declarations */
+            padding: 2rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+        }
+        h1 {
+            color: var(--primary);
+            border-bottom: 2px solid var(--primary);
+            padding-bottom: 10px;
+        }
+        section {
+            background: var(--section-bg);
+            /* REMOVED fixed background */
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        footer {
+            color: var(--footer-text);
+            text-align: center;
+            margin-top: 2rem;
+            /* REMOVED fixed color */
+            font-size: 0.9rem;
+        }
+        .last-updated {
+            float: right;
+            font-size: 0.9rem;
+        }
+        .theme-toggle {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+            🌓
+        </button>
+        <h1>DonnySavage Bot Privacy Policy</h1>
+        <p>Last Updated: <span class="last-updated">2023-11-15</span></p>
+    </header>
+    
+    <section id="introduction">
+        <h2>1. Introduction</h2>
+        <p>This privacy policy explains how DonnySavage Bot ("the Bot") collects, uses, and protects your information when you interact with it on Discord.</p>
+    </section>
+    
+    <section id="data-collection">
+        <h2>2. Data Collection</h2>
+        <p>We collect minimal data necessary for moderation:</p>
+        <ul>
+            <li><strong>Server IDs:</strong> For configuration storage</li>
+            <li><strong>User IDs:</strong> For moderation tracking</li>
+            <li><strong>Message Metadata:</strong> Author, timestamp, channel</li>
+            <li><strong>Attachment URLs:</strong> Temporary links to images (PNG/JPEG/GIF only)</li>
+        </ul>
+        <p><em>We never store actual file content or personal information.</em></p>
+    </section>
+    
+    <section id="data-usage">
+        <h2>3. How We Use Data</h2>
+        <p>Data is used exclusively for:</p>
+        <ul>
+            <li>Moderation and safety enforcement</li>
+            <li>Bot functionality (scheduled messages, welcome systems)</li>
+            <li>Debugging and improvement</li>
+        </ul>
+    </section>
+    
+    <section id="data-storage">
+        <h2>4. Data Retention</h2>
+        <ul>
+            <li>Message data: 14 days maximum</li>
+            <li>Attachment URLs: 48 hours maximum</li>
+            <li>Server configurations: Until bot removal</li>
+        </ul>
+    </section>
+    
+    <section id="user-rights">
+        <h2>5. Your Rights</h2>
+        <p>You can:</p>
+        <ul>
+            <li>View your data with <code>/request-my-data</code></li>
+            <li>Delete your data with <code>/delete-my-data</code></li>
+            <li>Adjust preferences with <code>/privacy</code></li>
+        </ul>
+    </section>
+    
+    <section id="contact">
+        <h2>6. Contact Us</h2>
+        <p>For questions or data requests:</p>
+        <ul>
+            <li>In-app: Use <code>/report</code> command</li>
+            <li>Discord: Join our <a href="https://discord.gg/kRkkpWTCn7">Support Server</a></li>
+            <li>Email: privacy@donnysavagebot.com</li>
+        </ul>
+    </section>
+    
+    <footer>
+        <p>© 2023 DonnySavage Bot | Policy Version 1.2</p>
+    </footer>
+</body>
+</html>
