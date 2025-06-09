@@ -1,1 +1,1 @@
-# Abdo129-DonnySavage-bot-Policy.github.i
+# Abdo129-DonnySavage-bot-Policy.github.io
