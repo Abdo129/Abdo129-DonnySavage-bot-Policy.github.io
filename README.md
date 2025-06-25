@@ -1,1 +1,5 @@
-# Abdo129-DonnySavage-bot-Policy.github.io
+# DonnySavage discord bot privacy policy 
+
+
+
+Read it here [Privacy Policy]()
